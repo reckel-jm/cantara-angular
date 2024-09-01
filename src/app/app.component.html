@@ -1,19 +1,32 @@
 <style>
-mat-sidenav {
-    max-width: 200px;
-}
-mat-sidenav-container {
-    height: 100%;
-}
+    mat-sidenav {
+        max-width: 200px;
+    }
+    mat-sidenav-container {
+        height: 100%;
+    }
 </style>
+
+@if (toolbarShown) {
+<mat-toolbar>
+    <span>Cantara</span>
+</mat-toolbar>
+}
 <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side" opened>
-        <app-sidebar-menu  />
+    <mat-sidenav #sidenavMenu mode="side" opened="true">
+        <app-sidebar-menu (entryClicked)="changeChildPage($event)" />
     </mat-sidenav>
     
     <mat-sidenav-content>
-        <p>Hello World. This is {{title}}.</p>
-        <app-home></app-home>
+        @if (currentPage == CP.PageSongSelection) {
+            <app-home />
+        }      
+        @else if (currentPage == CP.PageSongPresentation) {
+            <app-presentation-controller />
+        }  
+        @else if (currentPage == CP.PageSettings) {
+            <app-settings-page />
+        }
     </mat-sidenav-content>
 </mat-sidenav-container>
 
