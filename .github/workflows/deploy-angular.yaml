@@ -1,0 +1,43 @@
+name: Test and Deploy Angular application
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22.8.0
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Test
+        run: npm run test -- --watch=false --browsers=ChromeHeadless
+      - name: Build
+        run: npm run build -- -c production --base-href "https://reckel-jm.github.io/cantara-angular/"
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: dist/
+
+  deploy:
+    needs: build
+    permissions:
+      repository-projects: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
