@@ -24,7 +24,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
     MatIconModule,
   ],
   animations: [
-    trigger('fade', [
+    trigger('fadeIn', [
       transition(':enter', [
         style({ opacity: 0 }),
         animate(300, style({ opacity: 1 }))
