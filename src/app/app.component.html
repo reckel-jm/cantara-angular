@@ -9,7 +9,10 @@
 
 @if (toolbarShown) {
 <mat-toolbar>
-    <span>Cantara</span>
+    <button mat-icon-button class="unvisible-button" aria-label="Example icon-button with menu icon" (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Cantara</span>    
 </mat-toolbar>
 }
 <mat-sidenav-container>
@@ -19,13 +22,13 @@
     
     <mat-sidenav-content>
         @if (currentPage == CP.PageSongSelection) {
-            <app-home />
+            <app-home @fadeIn />
         }      
         @else if (currentPage == CP.PageSongPresentation) {
-            <app-presentation-controller />
+            <app-presentation-controller @fadeIn />
         }  
         @else if (currentPage == CP.PageSettings) {
-            <app-settings-page />
+            <app-settings-page @fadeIn />
         }
     </mat-sidenav-content>
 </mat-sidenav-container>

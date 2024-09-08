@@ -1,3 +1,26 @@
-<mat-list>
-    <app-song-list-entry></app-song-list-entry>
-</mat-list>
+<div class="container" width="100%">
+  <div class="row" width="100%">
+    <div class="col-sm">
+      <form>
+        <mat-form-field class="searchfield">
+        <mat-label>Filter Elements...</mat-label>
+        <input 
+            matInput 
+            type="text" 
+        />  
+        </mat-form-field>
+      </form>
+      <mat-list>
+
+      @for (songlistentry of songList; track songlistentry) {
+        <!-- <app-song-list-entry songlistentry={{songlistentry}} />*/--> 
+        <p>Test</p>
+      }    
+
+      </mat-list>
+    </div> 
+    <div class="col-sm">
+      <p>Ein weiterer Abschnitt mit viel Text. Ein weiterer Abschnitt mit viel Text. Ein weiterer Abschnitt mit viel Text. </p>
+    </div> 
+  </div>
+</div>

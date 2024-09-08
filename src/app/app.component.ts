@@ -7,6 +7,8 @@ import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
 import { CantaraPage } from './cantara-datatypes';
 import { SettingsPageComponent } from './settings-page/settings-page.component';
 import { PresentationControllerComponent } from './presentation-controller/presentation-controller.component';
+import { MatIconModule } from '@angular/material/icon';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +21,15 @@ import { PresentationControllerComponent } from './presentation-controller/prese
     SettingsPageComponent,
     PresentationControllerComponent,
     MatToolbarModule,
+    MatIconModule,
+  ],
+  animations: [
+    trigger('fade', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate(300, style({ opacity: 1 }))
+      ])
+    ]),
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -35,6 +46,11 @@ export class AppComponent implements AfterViewInit {
 
   currentPage: CantaraPage = CantaraPage.PageSongSelection;
 
+  public innerWidth: number = 0;
+  ngOnInit() {
+      this.innerWidth = Number(window.innerWidth);
+  }
+  
   changeChildPage(page: CantaraPage) {
     this.currentPage = page;
 
@@ -44,11 +60,23 @@ export class AppComponent implements AfterViewInit {
     } else {
       this.toolbarShown = true;
     }
+
+    if (this.innerWidth <= 600) {
+      this.hideMenu();
+    }
   }
 
   ngAfterViewInit() {
   }
 
+  toggleMenu() {
+    this.sidenavMenu.toggle();
+  }
+
+  openMenu() {
+    this.sidenavMenu.open();
+  }
+  
   hideMenu() {
     this.sidenavMenu.close();
   }
@@ -59,4 +87,16 @@ export class AppComponent implements AfterViewInit {
       this.sidenavMenu.toggle();
     }
   }
-}
+
+  /* We open/close the menu based on the window size */
+  @HostListener('window:resize',  ['$event'])
+  onResize(event: { target: { innerWidth: () => any; }; }) {
+    // We update the innerWidth property which is used at other parts
+    this.innerWidth = Number(event.target.innerWidth);
+    if (this.innerWidth > 600) {
+      this.openMenu();
+    } else {
+      this.hideMenu();
+    }
+  }
+}   
