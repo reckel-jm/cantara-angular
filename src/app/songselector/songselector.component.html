@@ -10,14 +10,13 @@
         />  
         </mat-form-field>
       </form>
-      <mat-list>
+      <mat-selection-list>
 
-      @for (songlistentry of songList; track songlistentry) {
-        <!-- <app-song-list-entry songlistentry={{songlistentry}} />*/--> 
-        <p>Test</p>
+      @for (songlistentry of fileManagerService.songList; track songlistentry) {
+        <app-song-list-entry [songlistentry]="songlistentry" />
       }    
 
-      </mat-list>
+      </mat-selection-list>
     </div> 
     <div class="col-sm">
       <p>Ein weiterer Abschnitt mit viel Text. Ein weiterer Abschnitt mit viel Text. Ein weiterer Abschnitt mit viel Text. </p>

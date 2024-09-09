@@ -15,7 +15,9 @@ export enum CantaraSongFileType {
 export interface CantaraSongFile {
     title: string,
     author: string,
-    filePath: string,
+    filepath: string,
     tags: string[],
     songfiletype: CantaraSongFileType,
 }
+
+export type CantaraSongList = CantaraSongFile[];
