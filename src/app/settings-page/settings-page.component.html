@@ -3,4 +3,9 @@
 
     <p>In the future, all the users of Cantara will be able to adjust the layout of Cantara here.</p>
     <p>For now, you will just find some boylerplates.</p>
+
+    <div class="styleSettings">
+        <h3>Style Settings</h3>
+        <p><mat-slide-toggle [checked]="settingsService.isDark" (toggleChange)="settingsService.toggleDarkTheme()">Dark Mode</mat-slide-toggle></p>
+    </div>
 </div>
