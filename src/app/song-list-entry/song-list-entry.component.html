@@ -1,4 +1,13 @@
-<mat-list-option>
-    <div><strong>{{ songlistentry.title }}</strong></div>
-    <div>{{ songlistentry.author }}</div>
-</mat-list-option>
+<mat-list-item class="mat-mdc-list-item-interactive" (dblclick)="selectionArray?.push(songlistentry)">
+    <span matListItemTitle>{{ songlistentry.title }}</span>
+    <span matListItemLine>{{ songlistentry.author }}</span>
+    @if (songlistentry.tags.length > 0) {
+        <span matListItemLine>
+            <mat-chip-set aria-label="Tags">
+                @for (tag of songlistentry.tags; track tag) {
+                    <mat-chip>{{tag}}</mat-chip>
+                }
+            </mat-chip-set>
+        </span>
+    }   
+</mat-list-item>

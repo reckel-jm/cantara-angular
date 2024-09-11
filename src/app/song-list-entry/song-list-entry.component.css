@@ -1,0 +1,4 @@
+.selectableEntry:hover {
+    background-color: var(--bs-secondary-bg-subtle);
+    user-select: none; 
+}

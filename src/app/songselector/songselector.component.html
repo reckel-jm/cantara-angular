@@ -1,25 +1,39 @@
 <div class="container" width="100%">
   <div class="row" width="100%">
     <div class="col-sm">
-      <form>
-        <mat-form-field class="searchfield">
-        <mat-label>Filter Elements...</mat-label>
-        <input 
-            matInput 
-            type="text" 
-        />  
-        </mat-form-field>
-      </form>
-      <mat-selection-list>
+      <mat-card tabindex="0">
+        <mat-card-header>
+          <span mat-card-title>Song Repository</span>
+        </mat-card-header>
+        <form>
+          <mat-form-field class="searchfield">
+          <mat-label>Filter Elements...</mat-label>
+          <input 
+              matInput 
+              type="text" 
+          />  
+          </mat-form-field>
+        </form>
+        <mat-card-content>
+          <mat-list class="selectableMenu no-user-select">
 
-      @for (songlistentry of fileManagerService.songList; track songlistentry) {
-        <app-song-list-entry [songlistentry]="songlistentry" />
-      }    
+          @for (songlistentry of fileManagerService.songList; track songlistentry) {
+            <app-song-list-entry [songlistentry]="songlistentry" [selectionArray]="fileManagerService.selectedSongs"/>
+          }    
 
-      </mat-selection-list>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
     </div> 
     <div class="col-sm">
-      <p>Ein weiterer Abschnitt mit viel Text. Ein weiterer Abschnitt mit viel Text. Ein weiterer Abschnitt mit viel Text. </p>
+      <mat-card tabindex="1">
+        <mat-card-header>
+          <span mat-card-title>Song Selection</span>
+        </mat-card-header>
+        <mat-card-content>
+          <app-selected-presentation-elements-list></app-selected-presentation-elements-list>
+        </mat-card-content>
+      </mat-card>
     </div> 
   </div>
 </div>

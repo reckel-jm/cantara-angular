@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="210mm"
+   viewBox="0 0 210 210"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="logo.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.71891835"
+     inkscape:cx="397.12437"
+     inkscape:cy="561.25984"
+     inkscape:window-width="1920"
+     inkscape:window-height="1020"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="84.773622"
+       y="569.52964"
+       width="623.78324"
+       height="156.66983"
+       id="rect1" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ffccaa;stroke:#000000;stroke-width:1.05184"
+       id="rect2"
+       width="208.28528"
+       height="209.18665"
+       x="1.0103668"
+       y="0.19380255"
+       rx="23.640476" />
+    <path
+       fill="#000000"
+       d="m 110.30046,22.243197 v 14.252697 h 12.95668 v 10.689527 h -12.95668 v 21.379055 l 53.0046,44.896084 v 2.13791 h -7.06728 v 37.76968 H 133.85806 V 115.59847 L 105,90.656184 76.14194,115.59847 v 37.76968 H 53.762217 v -37.76968 h -7.06728 v -2.13791 L 99.699543,68.564476 V 47.185421 H 86.74286 V 36.495894 H 99.699543 V 22.243197 Z M 92.043321,151.94287 v -24.94221 a 13.545621,14.252703 0 0 1 25.913359,0 v 24.94221 z"
+       id="path1"
+       style="fill:#800000;stroke-width:0.647841" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-0.38021825,11.807118)"
+       id="text1"
+       style="font-size:74.6667px;white-space:pre;shape-inside:url(#rect1);display:inline;fill:#800000;stroke:#000000"
+       x="257.21368"
+       y="0"><tspan
+         x="137.2821"
+         y="637.46668"
+         id="tspan3"><tspan
+           style="font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:center;text-anchor:middle"
+           id="tspan2">Cantara Project</tspan></tspan></text>
+  </g>
+</svg>
