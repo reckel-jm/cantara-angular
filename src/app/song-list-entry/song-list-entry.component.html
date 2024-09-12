@@ -1,13 +1,12 @@
-<mat-list-item class="mat-mdc-list-item-interactive" (dblclick)="selectionArray?.push(songlistentry)">
+<mat-list-item class="mat-mdc-list-item-interactive" (dblclick)="selectionArray?.push(songlistentry)" (contextmenu)="menu.toggleMenu()">
     <span matListItemTitle>{{ songlistentry.title }}</span>
     <span matListItemLine>{{ songlistentry.author }}</span>
-    @if (songlistentry.tags.length > 0) {
-        <span matListItemLine>
-            <mat-chip-set aria-label="Tags">
-                @for (tag of songlistentry.tags; track tag) {
-                    <mat-chip>{{tag}}</mat-chip>
-                }
-            </mat-chip-set>
+    @if ((songlistentry.tags.length > 0) && (showTags)) {
+        <span matListItemLine class="display-inline">
+            @for (tag of songlistentry.tags; track tag) {
+                <mat-chip>{{tag}}</mat-chip>
+            }
         </span>
     }   
 </mat-list-item>
+<app-song-context-menu #menu [isRemovable]="false" [song]="songlistentry" />

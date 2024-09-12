@@ -5,7 +5,10 @@
     <p>For now, you will just find some boylerplates.</p>
 
     <div class="styleSettings">
-        <h3>Style Settings</h3>
+        <h3>Program Style Settings</h3>
         <p><mat-slide-toggle [checked]="settingsService.isDark" (toggleChange)="settingsService.toggleDarkTheme()">Dark Mode</mat-slide-toggle></p>
+        <p>
+            <mat-slide-toggle [checked]="settingsService.showTagsInSongSelection" (toggleChange)="settingsService.toggleShowTagsInSongSelection()">Show song tags in song selection</mat-slide-toggle>
+        </p>
     </div>
 </div>

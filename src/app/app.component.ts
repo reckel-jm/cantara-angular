@@ -9,6 +9,7 @@ import { SettingsPageComponent } from './settings-page/settings-page.component';
 import { PresentationControllerComponent } from './presentation-controller/presentation-controller.component';
 import { MatIconModule } from '@angular/material/icon';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { MatInputModule } from '@angular/material/input'; 
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
     PresentationControllerComponent,
     MatToolbarModule,
     MatIconModule,
+    MatInputModule,
   ],
   animations: [
     trigger('fadeIn', [
@@ -98,5 +100,10 @@ export class AppComponent implements AfterViewInit {
     } else {
       this.hideMenu();
     }
+  }
+
+  @HostListener('contextmenu', ['$event'])
+  onRightClick(event : { preventDefault(): any } ) {
+    event.preventDefault();
   }
 }   

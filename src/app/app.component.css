@@ -10,3 +10,17 @@
         display: none;
     }
 }
+
+.global-searchbar-div {
+    margin: auto;
+    height: 50%;
+    border-color: var(--bs-light-border-subtle);
+    border-width: 20px;
+    color: var(--bs-light-bg-subtle);
+}
+
+.global-searchbar {
+    border-color: var(--bs-light-border-subtle);
+    border-width: 20px;
+    color: var(--bs-light-bg-subtle);
+}

@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class SettingsService {
   isDark = false;
+  showTagsInSongSelection = true;
 
   static readonly darkStyleName = 'cyan-orange';
   constructor() { }
@@ -35,5 +36,17 @@ export class SettingsService {
 
   getDarkThemeEnabled(): boolean {
     return this.isDark;
+  }
+
+  setShowTagsInSongSelection(state: boolean) {
+    this.showTagsInSongSelection = state;
+  }
+
+  getShowTagsInSongSelection(): boolean {
+    return this.showTagsInSongSelection;
+  }
+
+  toggleShowTagsInSongSelection() {
+    this.showTagsInSongSelection = !(this.showTagsInSongSelection);
   }
 }

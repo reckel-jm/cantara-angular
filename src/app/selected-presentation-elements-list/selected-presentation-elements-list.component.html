@@ -1,9 +1,9 @@
 <mat-list class="no-user-select">
 
-    @for (songlistentry of fileManagerService.selectedSongs; track songlistentry) {
-      <mat-list-item class="mat-mdc-list-item-interactive">
-        {{songlistentry.title}}
-      </mat-list-item>
-    }    
+  @for (songlistentry of fileManagerService.selectedSongs; track songlistentry; let i = $index) {
+    <mat-list-item class="mat-mdc-list-item-interactive">
+      {{songlistentry.title}}
+    </mat-list-item>  
+  }    
 
 </mat-list>

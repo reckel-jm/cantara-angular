@@ -5,20 +5,15 @@
         <mat-card-header>
           <span mat-card-title>Song Repository</span>
         </mat-card-header>
-        <form>
-          <mat-form-field class="searchfield">
-          <mat-label>Filter Elements...</mat-label>
-          <input 
-              matInput 
-              type="text" 
-          />  
-          </mat-form-field>
-        </form>
         <mat-card-content>
           <mat-list class="selectableMenu no-user-select">
 
           @for (songlistentry of fileManagerService.songList; track songlistentry) {
-            <app-song-list-entry [songlistentry]="songlistentry" [selectionArray]="fileManagerService.selectedSongs"/>
+            <app-song-list-entry 
+              [songlistentry]="songlistentry" 
+              [selectionArray]="fileManagerService.selectedSongs" 
+              [showTags]="this.settingsService.getShowTagsInSongSelection()"
+            />
           }    
 
           </mat-list>

@@ -1,0 +1,10 @@
+<mat-menu #menu="matMenu">
+    <ng-template matMenuContent>
+        <button mat-menu-item>View <u>{{song?.title}}</u> in editor</button>
+        <button mat-menu-item>Instant Presentation</button>
+        @if (isRemovable) {
+            <button mat-menu-item>Remove from List</button>
+        }
+    </ng-template>
+</mat-menu>
+<div [mat-menu-trigger-for]="menu"></div>

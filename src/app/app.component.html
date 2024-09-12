@@ -12,7 +12,16 @@
     <button mat-icon-button class="unvisible-button" aria-label="Example icon-button with menu icon" (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
-    <span>Cantara</span>    
+    <span>Cantara</span>
+    <div class="global-searchbar-div">
+        <mat-form-field class="global-searchbar">
+            <mat-label>Filter Elements...</mat-label>
+            <input 
+                matInput 
+                type="text" 
+            />  
+        </mat-form-field>
+    </div>
 </mat-toolbar>
 }
 <mat-sidenav-container>
