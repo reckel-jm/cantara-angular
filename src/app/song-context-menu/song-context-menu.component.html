@@ -2,8 +2,8 @@
     <ng-template matMenuContent>
         <button mat-menu-item>View <u>{{song?.title}}</u> in editor</button>
         <button mat-menu-item>Instant Presentation</button>
-        @if (isRemovable) {
-            <button mat-menu-item>Remove from List</button>
+        @if (isRemovable ) {
+            <button mat-menu-item (click)="deleteEntryFromSelectionIndex()">Remove from List</button>
         }
     </ng-template>
 </mat-menu>

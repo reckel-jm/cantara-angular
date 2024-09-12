@@ -1,9 +1,20 @@
-<mat-list class="no-user-select">
+@if (fileManagerService.selectedSongs.length > 0) {
+  <mat-list class="no-user-select">
 
-  @for (songlistentry of fileManagerService.selectedSongs; track songlistentry; let i = $index) {
-    <mat-list-item class="mat-mdc-list-item-interactive">
-      {{songlistentry.title}}
-    </mat-list-item>  
-  }    
+    @for (songlistentry of fileManagerService.selectedSongs; track songlistentry; let i = $index) {
+      <mat-list-item class="mat-mdc-list-item-interactive">
+        {{songlistentry.title}}
+        <span class="full-spacer"></span>
+        <button mat-icon-button aria-label="Open Menu" class="cmb" (click)="menu.toggleMenuWidth(songlistentry, true, i)">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </mat-list-item>  
+      <app-song-context-menu #menu />
+    }    
 
-</mat-list>
+  </mat-list>
+}
+
+@else if (fileManagerService.selectedSongs.length == 0) {
+  <p>You have not selected any song yet.</p>
+}
